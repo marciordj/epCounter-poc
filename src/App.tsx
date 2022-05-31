@@ -1,23 +1,19 @@
 import React from 'react';
 
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
+
+import Home from './Screens/Home';
+import theme from './themes';
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Hello worldddd</Text>
-    </SafeAreaView>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView>
+        <Home />
+      </SafeAreaView>
+    </ThemeProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#0D1440',
-    flex: 1
-  },
-  text: {
-    color: 'red'
-  }
-});
 
 export default App;
